@@ -4,17 +4,29 @@ class Form extends React.Component {
 
     render() {
 
-        
-        
+
+
         return (
             <>
                 <div className="col-6 offset-3">
                     <h1 className="mb-5 text-center">Login</h1>
-                    <form >
+                    <form onSubmit={this.props.onSubmit}>
+
+
+
+                        <div className="form-group mb-2">
+                            <label for="firstName">first name</label>
+                            <input type="text" className={`form-control ${this.props.firstNameIsValid ? "is-valid" : "is-invalid"}`}  placeholder="Enter first name" onChange={this.props.onChangeFirstName} />
+                        </div>
+
+                        <div className="form-group mb-2">
+                            <label for="lastName">last name</label>
+                            <input type="text" className={`form-control ${this.props.lastNameIsValid ? "is-valid" : "is-invalid"}`} placeholder="Enter last name" onChange={this.props.onChangeLastName} />
+                        </div>
 
                         <div className="form-group mb-2">
                             <label for="email">Email adress</label>
-                            <input type="email" className={`form-control ${this.props.emailIsValid ? "is-valid" : "is-invalid"}`} placeholder="Enter email" autoComplete="off" onChange={this.props.onChangeEmail}  />
+                            <input type="email" className={`form-control ${this.props.emailIsValid ? "is-valid" : "is-invalid"}`} placeholder="Enter email" autoComplete="off" onChange={this.props.onChangeEmail} />
                         </div>
 
                         <div className="form-group mb-2">
@@ -27,8 +39,8 @@ class Form extends React.Component {
                             <label for="form-check">Remember me</label>
                         </div>
 
-                        <button onClick={this.props.onSubmit}>Submit</button>
-
+                        <button>Submit</button>
+                        
                     </form>
                 </div>
 
